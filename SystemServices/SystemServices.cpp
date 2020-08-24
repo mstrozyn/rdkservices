@@ -620,7 +620,11 @@ namespace WPEFramework {
             param.bufLen = 0;
             param.type = mfrSERIALIZED_TYPE_MANUFACTURER;
             if (!parameter.compare(MODEL_NAME)) {
+#ifdef BUILD_XI1
                 param.type = mfrSERIALIZED_TYPE_SKYMODELNAME;
+#else
+                param.type = mfrSERIALIZED_TYPE_MODELNAME;
+#endif
             } else if (!parameter.compare(HARDWARE_ID)) {
                 param.type = mfrSERIALIZED_TYPE_HWID;
             }
