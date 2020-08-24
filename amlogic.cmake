@@ -81,6 +81,11 @@ if (AMLOGIC_E2)
     add_definitions (-DAMLOGIC_E2)
 endif()
 
+if (BUILD_ENABLE_DEVICE_MANUFACTURER_INFO)
+    message("Building with device manufacturer info")
+    add_definitions (-DENABLE_DEVICE_MANUFACTURER_INFO)
+endif()
+
 if (BUILD_LLAMA)
     message("Building for LLAMA")
     add_definitions (-DBUILD_LLAMA)
